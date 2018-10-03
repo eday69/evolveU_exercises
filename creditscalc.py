@@ -1,3 +1,6 @@
+# This has been modified by me after uploading to github
+# This will calculate the consumption by client
+
 # creditscalc.py by Eric Day
 import openpyxl
 import sys
