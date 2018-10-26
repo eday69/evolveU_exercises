@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<body>
+
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Client ID</td>
+        <td>Month</td>
+        <td>Credits</td>
+    </tr>
+
+    {% for nocredits in credits %}
+    <tr>
+        <td>{{ nocredits.id }}</td>
+        <td>{{ nocredits.client_id }}</td>
+        <td>{{ nocredits.month }}</td>
+        <td>{{ nocredits.credits }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
+

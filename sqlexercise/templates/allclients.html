@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<body>
+
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>City</td>
+        <td>Birth Year</td>
+        <td>Credits</td>
+    </tr>
+
+    {% for client in AllClients %}
+    <tr>
+        <td>{{ client.id }}</td>
+        <td>{{ client.name }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.city }}</td>
+        <td>{{ client.birth_year }}</td>
+        <td>{{ client.credits }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
+
