@@ -53,7 +53,7 @@ class SqlClient:
         cur.close()
         conn.close()
 
-        return json.dumps({'id': row[0], 'client_id': row[1], 'name': row[2], 'email': row[3], 'city': row[4], 'birth_year': row[5]})
+        return json.dumps({'client_id': row[0], 'name': row[1], 'email': row[2], 'city': row[3], 'birth_year': row[4]})
 
         # return SqlClient.client_sql_queries("SELECT *, null from clients where client_id = "+str(client)+" ", False)
 

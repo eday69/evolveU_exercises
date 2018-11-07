@@ -79,34 +79,49 @@ var playModule = function() {
     });
 
     document.getElementById('btnBuildDiv').addEventListener('click', function() {
+
+        addADiv(superCounter.toString());
+        ++superCounter;
+
+    });
+
+    function addADiv(content) {
         var parentDiv = document.querySelector(".divContainer");
         var newdiv = document.createElement("div");
         newdiv.className = "miNewDivClass";
-        newdiv.style.border = '1px solid black';
-        newdiv.style.height = '50px';
-        newdiv.style.width = '50px';
-        newdiv.textContent = superCounter.toString();
-        newdiv.style.float = 'left';
+//        newdiv.style.border = '1px solid black';
+//        newdiv.style.height = '50px';
+//        newdiv.style.width = '50px';
+        newdiv.innerHTML = content;
+//        newdiv.style.float = 'left';
 
-        ++superCounter;
         parentDiv.appendChild(newdiv);
-    });
+    }
 
-
-    document.addEventListener('click',function(e){
+    document.querySelector('.divContainer').addEventListener('click',function(e){
+//        console.log(e);
         if(e.target && e.target.className == 'miNewDivClass'){
             e.target.remove();
         }
      });
 
     document.getElementById('btnGetData').addEventListener('click', function() {
-
-        fetch('/oneclient/4',{
+        var id = document.getElementById('idClient').value;
+        fetch('/oneclient/'+id,{
                              credentials: 'include'
                             })
           .then(function(response) { return response.json(); })
           .then(function(myJson) {
-            document.getElementById('movableText').value = JSON.stringify(myJson);
+//                var info =JSON.stringify(myJson);
+                var info2 = "<div>ClientID</div><div>"+myJson.client_id+"</div>";
+                info2 += "<div>Name</div><div>"+myJson.name+"</div>"
+                info2 += "<div>Email</div><div>"+myJson.email+"</div>"
+                info2 += "<div>City</div><div>"+myJson.city+"</div>"
+                info2 += "<div>Birth Year</div><div>"+myJson.birth_year+"</div>"
+                console.log(info2);
+                addADiv(info2);
+
+//            document.getElementById('movableText').value = JSON.stringify(myJson);
 
           });
 

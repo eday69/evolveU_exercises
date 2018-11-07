@@ -59,3 +59,14 @@ h1 {
     margin-left:5%;
     width:90%;
 }
+
+.miNewDivClass {
+    height: 100px;
+    width: 150px;
+    float: left;
+    border: 1px solid black;
+    font-size: 10px;
+    display: grid;
+    grid-template-columns: 2fr  3fr;
+    grid-template-row: 1fr 1fr 1fr 1fr 1fr;
+}
