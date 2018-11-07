@@ -56,4 +56,6 @@ h1 {
 
 .divButton {
     clear: both;
+    margin-left:5%;
+    width:90%;
 }

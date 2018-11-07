@@ -55,6 +55,9 @@ var playModule = function() {
             document.querySelector('.rightdiv').textContent = 'Min: ' + myarr.reduce((min, x) => x < min?x:min);
             printArr(myarr);
         }
+        else {
+            printObj(myarr);
+        }
     });
 
     document.querySelector('#printArray').addEventListener('click', function() {
@@ -75,7 +78,7 @@ var playModule = function() {
         }
     });
 
-    document.getElementById('divBuilder').addEventListener('click', function() {
+    document.getElementById('btnBuildDiv').addEventListener('click', function() {
         var parentDiv = document.querySelector(".divContainer");
         var newdiv = document.createElement("div");
         newdiv.className = "miNewDivClass";
@@ -96,19 +99,13 @@ var playModule = function() {
         }
      });
 
-    document.getElementById('getData').addEventListener('click', function() {
-
-        console.log('Getting data');
+    document.getElementById('btnGetData').addEventListener('click', function() {
 
         fetch('/oneclient/4',{
                              credentials: 'include'
                             })
-//          .then(function(response) { return response; })
           .then(function(response) { return response.json(); })
           .then(function(myJson) {
-//            console.log('Returning');
-//            console.log('Got ', myJson);
-//            console.log(JSON.stringify(myJson));
             document.getElementById('movableText').value = JSON.stringify(myJson);
 
           });
