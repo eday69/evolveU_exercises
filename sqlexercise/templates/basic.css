@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.topdiv {
+    margin-left:5%;
+    height:100px;
+    width:90%;
+    border: 1px solid black;
+}
+
+.container {
+    margin-left:5%;
+    width:90%;
+    height:200px;
+    position: relative;
+}
+
+.leftdiv {
+    width:50%;
+    height:100%;
+    border: 1px solid black;
+    float: left;
+}
+.rightdiv {
+    width:50%;
+    height:100%;
+    border: 1px solid black;
+    float: left;
+}
+
+.bottomdiv {
+    clear: both;
+    margin-left:5%;
+    height:100px;
+    width:90%;
+    border: 1px solid black;
+}
+
+.mytextarea {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+}
+
+.divContainer {
+    margin-left:5%;
+    width:90%;
+    float: left;
+}
+
+.divButton {
+    clear: both;
+}

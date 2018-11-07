@@ -1,4 +1,5 @@
 import psycopg2
+import json
 
 class SqlClient:
 
@@ -38,6 +39,23 @@ class SqlClient:
     @staticmethod
     def show_all_clients():
         return SqlClient.client_sql_queries("""SELECT *, null from clients""", False)
+
+    @staticmethod
+    def show_one_client(client):
+        sql="SELECT *, null from clients where client_id = "+str(client)
+        conn = psycopg2.connect('dbname=evolveu')
+        cur = conn.cursor()
+        cur.execute(sql)
+
+        row = cur.fetchone()
+        # 'id': row[0], 'client_id': row[1], 'name': row[2], 'email': row[3], 'city': row[4], 'birth_year': row[5]
+        # print(json.dumps(row))
+        cur.close()
+        conn.close()
+
+        return json.dumps({'id': row[0], 'client_id': row[1], 'name': row[2], 'email': row[3], 'city': row[4], 'birth_year': row[5]})
+
+        # return SqlClient.client_sql_queries("SELECT *, null from clients where client_id = "+str(client)+" ", False)
 
 
     @staticmethod
