@@ -73,7 +73,7 @@ people.forEach(function(current) {
     console.log(current);
 });
 
-for (let i=1; i<= 48; i++) {
+for (let i=1; i<= 48s; i++) {
     people.forEach(function(current) {
         current.payMe();
         if (i % 12 === 0)  current.birthday();
